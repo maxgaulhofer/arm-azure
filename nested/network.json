@@ -17,29 +17,20 @@
   "resources": [
     {
       "apiVersion": "[variables('apiVersion')]",
-      "type": "Microsoft.Storage/storageAccounts",
-      "name": "[variables('storageAccountName')]",
-      "location": "[resourceGroup().location]",
-      "properties": {
-        "accountType": "Standard_LRS"
-      }
-    },
-    {
-      "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('networkSettings').virtualNetworkName]",
       "location": "[resourceGroup().location]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
-            "[parameters('networkSettings').addressPrefix]"
+            "10.80.0/20"
           ]
         },
         "subnets": [
           {
-            "name": "[parameters('networkSettings').subnet.dse.name]",
+            "name": "test",
             "properties": {
-              "addressPrefix": "[parameters('networkSettings').subnet.dse.prefix]"
+              "addressPrefix": "10.80.0.0/24"
             }
           }
         ]

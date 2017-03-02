@@ -21,30 +21,6 @@
         "description": "Administrator password used when provisioning virtual machines"
       }
     },
-    "haproxyVmSize": {
-      "type": "string",
-      "defaultValue": "Standard_D3",
-      "allowedValues": [
-        "Standard_A1",
-        "Standard_A2",
-        "Standard_A3",
-        "Standard_A4",
-        "Standard_A5",
-        "Standard_A6",
-        "Standard_A7",
-        "Standard_D1",
-        "Standard_D2",
-        "Standard_D3",
-        "Standard_D4",
-        "Standard_D1_v2",
-        "Standard_D2_v2",
-        "Standard_D3_v2",
-        "Standard_D4_v2"
-      ],
-      "metadata": {
-        "description": "The size of the virtual machines used when provisioning the Lap node"
-      }
-    },
     "dcVmSize": {
       "type": "string",
       "defaultValue": "Standard_A2",
@@ -70,7 +46,7 @@
     }
   },
   "variables": {
-    "templateBaseUrl": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mysql-mha-haproxy-ubuntu/nested/",
+    "templateBaseUrl": "https://github.com/maxgaulhofer/arm-azure/blob/master/nested/",
     "networkTemplateUrl": "[concat(variables('templateBaseUrl'), 'network.json')]",
     "apiVersion": "2015-01-01",
     "networkSettings": {
